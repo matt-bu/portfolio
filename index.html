@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matt Bu | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
         body {
             margin: 100px;
@@ -233,25 +234,58 @@
             margin-top: 42%;
         }
 
+        .socials i {
+            margin: 5px;
+            font-size: 20px;
+            color: gray;
+        }
+
+        iframe {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card iframe {
+            overflow: hidden;
+            height: 100%
+        }
+
+        .shorts {
+            margin: 200px;
+            left: -100px;
+        }
+
+        .shorts .card:nth-child(2) {
+            transform: rotate(7deg);
+            left: -150px;
+        }
+
     </style>
 </head>
 <body>
+    <div class="socials">
+        <a href="mailto:mattbu.me@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+        <a href="https://www.instagram.com/badn_bujee/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/matt-bu"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+    <br><br>
+
     <div class="profile-container">
-        <img src="https://github.com/matt-bu/portfolio/blob/main/static/img/profpic.jpg?raw=true" alt="Profile Picture" class="profile-pic">
+        <img src="https://github.com/matt-bu/portfolio/blob/main/static/img/profpic.jpeg?raw=true" alt="Profile Picture" class="profile-pic">
     </div>
     <h2>Matt Bu</h2>
-    <p class="profile-title">Sr. Software Engineer</p>
+    <p class="profile-title">Just another hooman.</p>
 
-
-    <h2>Recent Adventures</h2>
+    <h2>Recent Adventures ✈️</h2>
     <!-- Horizontal Overlapping Cards Section -->
     <div class="overlap-container">
         <div class="card">
-            <img src="https://github.com/matt-bu/portfolio/blob/main/static/img/brazil.JPG?raw=true" alt="Photo 1">
+            <img src="https://github.com/matt-bu/portfolio/blob/main/static/img/brazil.jpeg?raw=true" alt="Photo 1">
             <div class="card-content">Brazil</div>
         </div>
         <div class="card">
-            <img src="https://github.com/matt-bu/portfolio/blob/main/static/img/zermatt.JPG?raw=true" alt="Photo 2">
+            <img src="https://github.com/matt-bu/portfolio/blob/main/static/img/zermatt.jpeg?raw=true" alt="Photo 2">
             <div class="card-content">Switzerland</div>
         </div>
         <div class="card">
@@ -261,8 +295,8 @@
     </div>
     <br>
 
-    <h2>Experience</h2>
-
+    <!-- Experience section -->
+    <h2>Experience 🖥️</h2>
     <div class="grid-container">
         <div class="column">
             <div class="present-text">Present</div> <!-- Text on top of the timeline -->
@@ -312,7 +346,27 @@
             </div>
         </div>
     </div>
-    
+    <br><br>
+
+    <!-- Vlog section -->
+    <h2>Vlogs 🎥</h2>
+    <br>
+    <iframe width="580px" height="320px"
+    src="https://www.youtube.com/embed/LAfHVSiGB4o?si=7-5WNGPq8jgmWHMF?autoplay=1&mute=1">
+    </iframe>
+
+    <!--
+    <div class="overlap-container shorts">
+        <div class="card">
+            <img src="https://github.com/matt-bu/portfolio/blob/main/static/img/brazil.jpeg?raw=true" alt="Photo 1">
+        </div>
+        <div class="card">
+            <iframe
+            src="https://youtube.com/embed/eb6XxDMiCyY?si=-yNyqlqa0kgBJqKc">
+            </iframe>
+        </div>
+    </div>
+    -->
 
 </body>
 </html>

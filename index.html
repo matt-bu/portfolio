@@ -1,1 +1,237 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Mobile Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: rgb(245, 245, 245);
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        .profile-title {
+            font-size: 1rem;
+            color: gray;
+            margin: 0 0 10px 0;
+        }
+
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #ddd;
+            transform: translateX(-50%);
+        }
+
+        .present-text {
+            margin-top: 100px;
+            left: 50%;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .timeline-content {
+            background-color: #fff;
+            border-radius: 18px; /* Increased border-radius */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: left;
+        }
+
+        .timeline-content-alt {
+            background-color: rgb(245, 245, 245);
+            border-radius: 18px; /* Increased border-radius */
+            padding: 20px;
+            width: 250px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .timeline-content p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .timeline-bottom-dot {
+            position: absolute;
+            left: 50%;
+            bottom: -10px; /* Position the dot below the timeline */
+            width: 10px;
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Horizontal Overlapping Cards Section */
+        .overlap-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            gap: 20px;
+            position: relative;
+        }
+
+        .card {
+            width: 300px;
+            height: 350px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-left: -50px; /* Make the cards overlap */
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 1;
+            transform: rotate(0deg); /* Default rotation */
+        }
+
+        /* Vertical offset for alternating cards */
+        .overlap-container .card:nth-child(odd) {
+            top: -10px; /* Offset odd cards upwards */
+        }
+
+        .overlap-container .card:nth-child(even) {
+            top: 10px; /* Offset even cards downwards */
+        }
+
+        /* Random rotation effect */
+        .overlap-container .card:nth-child(1) {
+            transform: rotate(-3deg);
+        }
+
+        .overlap-container .card:nth-child(2) {
+            transform: rotate(7deg);
+        }
+
+        .overlap-container .card:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .card:hover {
+            transform: scale(1.3) rotate(0) !important; /* Enlarge the card on hover and reset rotation */
+            z-index: 10; /* Bring the hovered card to the front */
+        }
+
+        /* Optionally add some text or other content inside the card */
+        .card-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <img src="/static/img/profpic.JPEG" alt="Profile Picture" class="profile-pic">
+    </div>
+    <p class="profile-name">Matt Bu</p>
+    <p class="profile-title">Sr. Software Engineer</p>
+
+    <!-- Horizontal Overlapping Cards Section -->
+    <div class="overlap-container">
+        <div class="card">
+            <img src="/static/img/brazil.JPG" alt="Photo 1">
+            <div class="card-content">Brazil</div>
+        </div>
+        <div class="card">
+            <img src="/static/img/zermatt.JPG" alt="Photo 2">
+            <div class="card-content">Switzerland</div>
+        </div>
+        <div class="card">
+            <img src="/static/img/spain.JPEG" alt="Photo 3">
+            <div class="card-content">Spain</div>
+        </div>
+    </div>
+
+    <div class="present-text">Present</div> <!-- Text on top of the timeline -->
+
+    <div class="timeline-container">
+        <div class="timeline-line"></div> <!-- Vertical line -->
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <h3>Meta</h3>
+                <p>Senior Software Engineer</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-content-alt">
+                <h3>Event 2</h3>
+                <p>This is the description of the second event in the timeline.</p>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-content-alt">
+                <h3>Event 3</h3>
+                <p>This is the description of the third event in the timeline.</p>
+            </div>
+        </div>
+        <div class="timeline-bottom-dot"></div> <!-- Small dot at the bottom -->
+    </div>
+
+</body>
+</html>

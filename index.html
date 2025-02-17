@@ -67,7 +67,7 @@
         }
 
         .present-text {
-            margin-top: 100px;
+            margin-top: 20px;
             left: 50%;
             font-weight: bold;
             font-size: 1.2rem;
@@ -89,6 +89,7 @@
             padding: 20px;
             width: 250px;
             text-align: center;
+            position: relative;
         }
 
         .timeline-content-alt {
@@ -98,6 +99,7 @@
             width: 250px;
             border: 1px solid #ddd;
             color: gray;
+            position: relative;
         }
 
         .timeline-content h3 {
@@ -196,13 +198,41 @@
         }
 
         .logo {
-            object-fit: cover;
+            object-fit: contain;
             width: 80px;
             height: 80px;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
+
+        .grid-container {
+            display: flex;
+        }
+
+        .column {
+            width: 80%;
+            padding: 10px;
+        }
+
+        .column:nth-child(2) {
+            margin-top: 65%;
+        }
+
+        .dotted-line {
+            position: absolute;
+            top: 50%;
+            left: -63%;
+            width: 63%;
+            border-top: 2px dotted #ddd;
+            pointer-events: none;
+            z-index: -10;
+        }
+
+        .school-second {
+            margin-top: 42%;
+        }
+
     </style>
 </head>
 <body>
@@ -233,36 +263,56 @@
 
     <h2>Experience</h2>
 
-    <div class="present-text">Present</div> <!-- Text on top of the timeline -->
+    <div class="grid-container">
+        <div class="column">
+            <div class="present-text">Present</div> <!-- Text on top of the timeline -->
 
-    <div class="timeline-container">
-        <div class="timeline-line"></div> <!-- Vertical line -->
-        <div class="timeline-item">
-            <div class="timeline-content">
-                <img class="logo" src="https://github.com/matt-bu/portfolio/blob/main/static/img/meta-logo.png?raw=true" alt="meta">
-                <h3>Meta</h3>
-                <p>Senior Software Engineer</p>
-                <p>2025-Present</p>
+            <div class="timeline-container">
+                <div class="timeline-line"></div> <!-- Vertical line -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <img class="logo" src="https://github.com/matt-bu/portfolio/blob/main/static/img/meta-logo.png?raw=true" alt="meta">
+                        <h3>Meta</h3>
+                        <p>Senior Software Engineer</p>
+                        <p>2025-Present</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content-alt">
+                        <img class="logo" src="https://github.com/matt-bu/portfolio/blob/main/static/img/amzn-logo.png?raw=true" alt="meta">
+                        <h3>Amazon</h3>
+                        <p>Software Dev Engineer</p>
+                        <p>2020-2025</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content-alt">
+                        <img class="logo" src="https://github.com/matt-bu/portfolio/blob/main/static/img/bb-logo.png?raw=true" alt="meta">
+                        <h3>Bloomberg</h3>
+                        <p>Software Engineer</p>
+                        <p>2017-2020</p>
+                    </div>
+                </div>
+                <div class="timeline-bottom-dot"></div> <!-- Small dot at the bottom -->
             </div>
         </div>
-        <div class="timeline-item">
+        <div class="column">
             <div class="timeline-content-alt">
-                <img class="logo" src="https://github.com/matt-bu/portfolio/blob/main/static/img/amzn-logo.png?raw=true" alt="meta">
-                <h3>Amazon</h3>
-                <p>Software Dev Engineer</p>
-                <p>2020-2025</p>
+                <div class="dotted-line"></div>
+                <img class="logo" src="https://github.com/matt-bu/portfolio/blob/main/static/img/cu-logo.png?raw=true" alt="meta">
+                <h3>Columbia University</h3>
+                <p>M.S. CS - Machine Learning</p>
+                <p>2020-2024</p>
+            </div>
+            <div class="timeline-content-alt school-second">
+                <div class="dotted-line"></div>
+                <h3>Rensselaer Polytechnic Institute</h3>
+                <p>B.S. Computer Science</p>
+                <p>2014-2017</p>
             </div>
         </div>
-        <div class="timeline-item">
-            <div class="timeline-content-alt">
-                <img class="logo" src="https://github.com/matt-bu/portfolio/blob/main/static/img/bb-logo.png?raw=true" alt="meta">
-                <h3>Bloomberg</h3>
-                <p>Software Engineer</p>
-                <p>2017-2020</p>
-            </div>
-        </div>
-        <div class="timeline-bottom-dot"></div> <!-- Small dot at the bottom -->
     </div>
+    
 
 </body>
 </html>
